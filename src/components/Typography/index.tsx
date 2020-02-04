@@ -1,10 +1,23 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled, { DefaultTheme } from 'styled-components/native';
 import { variant } from 'styled-system';
+import { StyledProps } from 'styled-components';
 
 export type TypographyProps = {
   size: keyof DefaultTheme['typography']['size'];
   type: keyof DefaultTheme['typography']['type'];
+};
+
+const cropNegativeSpace = (props: StyledProps<TypographyProps>) => {
+  const fontSize = props.theme.typography.size[props.size]?.fontSize ?? 16;
+  const topCrop = fontSize * -props.theme.typography.crop.top;
+  const bottomCrop = fontSize * -props.theme.typography.crop.bottom;
+
+  return {
+    fontSize: fontSize,
+    marginTop: topCrop,
+    marginBottom: bottomCrop,
+  };
 };
 
 const Typography = styled.Text<TypographyProps>(
@@ -16,13 +29,7 @@ const Typography = styled.Text<TypographyProps>(
     prop: 'type',
     scale: 'typography.type',
   }),
-  props => {
-    const fontSize = props.theme.typography.size[props.size]?.fontSize ?? 16;
-    return {
-      marginTop: -(fontSize * 0.39),
-      marginBottom: -(fontSize * 0.43),
-    };
-  },
+  cropNegativeSpace,
 );
 
 export default Typography;

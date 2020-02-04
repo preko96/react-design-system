@@ -15,7 +15,6 @@ const space = {
   xxlarge: 128,
   xxxlarge: 256,
 };
-
 const typography = {
   type: {
     light: {
@@ -36,38 +35,18 @@ const typography = {
     },
   },
   size: {
-    h1: {
-      fontSize: 150,
-      lineHeight: 180,
-    },
-    h2: {
-      fontSize: 48,
-      lineHeight: 60,
-    },
-    h3: {
-      fontSize: 36,
-      lineHeight: 48,
-    },
-    callout: {
-      fontSize: 24,
-      lineHeight: 36,
-    },
-    body: {
-      fontSize: 16,
-      lineHeight: 24,
-    },
-    caption: {
-      fontSize: 13,
-      lineHeight: 16,
-    },
-    footnote: {
-      fontSize: 11,
-    },
+    h1: { fontSize: 120 },
+    h2: { fontSize: 48 },
+    h3: { fontSize: 36 },
+    callout: { fontSize: 24 },
+    body: { fontSize: 16 },
+    caption: { fontSize: 13 },
+    footnote: { fontSize: 11 },
   },
   crop: {
     enable: true,
-    top: 0.2,
-    bottom: 0.3,
+    top: 0.38,
+    bottom: 0.43,
   },
 };
 

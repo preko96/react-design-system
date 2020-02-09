@@ -44,9 +44,9 @@ const typography = {
     footnote: { fontSize: 11 },
   },
   crop: {
-    enable: true,
-    top: 0.38,
-    bottom: 0.43,
+    enable: false,
+    top: 0.43,
+    bottom: 0.24,
   },
 };
 

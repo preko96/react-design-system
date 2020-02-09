@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 import React from 'react';
+import { ViewProps } from 'react-native';
 import { backgroundColor, BackgroundProps, margin, MarginProps, padding, PaddingProps } from '../utils';
 
-type BoxProps = PaddingProps & MarginProps & BackgroundProps;
+export type BoxProps = PaddingProps & MarginProps & BackgroundProps;
 
 const Box = styled.View<BoxProps>(padding, margin, backgroundColor);
 
@@ -15,7 +16,7 @@ SectionHorizontal.defaultProps = { px: 'normal' };
 const SectionVertical = styled(Box)``;
 SectionVertical.defaultProps = { py: 'normal' };
 
-class Section extends React.PureComponent<BoxProps> {
+class Section extends React.PureComponent<BoxProps & ViewProps> {
   static Horizontal = SectionHorizontal;
   static Vertical = SectionVertical;
   render() {

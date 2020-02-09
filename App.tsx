@@ -1,8 +1,8 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { Box } from './src/components/Box';
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/theme';
+import Level from './src/components/Level';
 import Typography from './src/components/Typography';
 
 const text =
@@ -13,12 +13,14 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Box pt="xlarge" />
-          <Box bg="ternary">
-            <Typography size="h3" type="normal">
-              {text}
-            </Typography>
-          </Box>
+          <Level gap="small">
+            <Level.Left>
+              <View style={{ height: 50, width: 50, backgroundColor: 'red' }} />
+            </Level.Left>
+            <Level.Wrap>
+              <Typography>{text}</Typography>
+            </Level.Wrap>
+          </Level>
         </ScrollView>
       </SafeAreaView>
     </ThemeProvider>

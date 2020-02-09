@@ -20,6 +20,12 @@ export type MarginProps = {
   ml?: keyof DefaultTheme['space'];
 };
 
+type Dictionary<T> = {
+  [key: string]: T;
+};
+
+export const extractValidProps = (obj: Dictionary<any>) => Object.keys(obj).forEach(key => (obj[key] === undefined ? delete obj[key] : {}));
+
 export const backgroundColor = (props: StyledProps<BackgroundProps>) => ({
   backgroundColor: props.theme.colors[props.bg],
 });
